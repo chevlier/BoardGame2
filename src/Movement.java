@@ -1,6 +1,6 @@
 
 public class Movement implements Play {
-   final int BORDER_LENGTH = 4;
+   final int BORDER_LENGTH = 4;//try to parametrize board size
    final int BORDER_WIDTH = 4;
 
     public void movePlayer(String movementCommand){
@@ -10,12 +10,13 @@ public class Movement implements Play {
         char direction = 'N';
 
         int[] positionCoordinates = {0,0};
-        char[] movementCommandArray = movementCommand.toCharArray();
+        char[] movementCommandArray = movementCommand.toCharArray();//remove arrays, use java.collections.List or Set or whatever
 
+        //Use a factory class that receives a single char - and returns Object (that was of COmmand interface: one method: movePLayer())
         Print print = new Printer();
 
         for(char e : movementCommandArray){
-            switch (e){
+            switch (e){ //switch is not recommended practice, use polymorphism§
                 case'R':
                     angle = angle + 90;
                     direction = directionHandler(angle);

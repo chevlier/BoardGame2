@@ -1,9 +1,9 @@
-import org.junit.Test;
+import org.junit.Test; //use junit 5
 
 import static org.junit.Assert.*;
-//
-public class MovementTest {
 
+public class MovementTest {
+//use english sentences like you would describe what this test actually tests: canSwitchDirection/canMoveNorth or smth
     @Test
     public void directionHandlerTest () {
         Movement direction = new Movement();
@@ -25,7 +25,7 @@ public class MovementTest {
     @Test
     public void movementHandlerTest (){
         Movement movement = new Movement();
-        int[][] playerPositionCoordinates = {{2,3},{4,4}};
+        int[][] playerPositionCoordinates = {{2,3},{4,4}};//use java Collections instead of arrays
         char[] directionBuffer = {'N','E'};
         int[][] finalPosition = {{2,4},{4,4}};
         assertArrayEquals(movement.movementHandler(playerPositionCoordinates[0], directionBuffer[0]), finalPosition[0]);
